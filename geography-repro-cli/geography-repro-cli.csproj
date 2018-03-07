@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <AssemblyName>geography_repro_cli</AssemblyName>
+    <RootNamespace>geography_repro_cli</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\geography-repro\geography-repro.csproj" />
+  </ItemGroup>
+</Project>
