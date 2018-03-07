@@ -14,10 +14,15 @@ GO
 USE [geography-test];
 GO
 
-CREATE TABLE geo_table (id  INT       PRIMARY KEY NOT NULL IDENTITY(1, 1)
-                      , geo GEOGRAPHY NOT NULL);
-					  
+CREATE TABLE SpatialTable
+    ( id int IDENTITY (1,1),
+    GeogCol1 geography,
+    GeogCol2 AS GeogCol1.STAsText() );
 GO
 
-INSERT INTO dbo.geo_table (geo)
-VALUES (geography::STGeomFromText('POINT (3 4)', 4250))
+INSERT INTO SpatialTable (GeogCol1)
+VALUES (geography::STGeomFromText('LINESTRING(-122.360 47.656, -122.343 47.656 )', 4326));
+
+INSERT INTO SpatialTable (GeogCol1)
+VALUES (geography::STGeomFromText('POLYGON((-122.358 47.653 , -122.348 47.649, -122.348 47.658, -122.358 47.658, -122.358 47.653))', 4326));
+GO

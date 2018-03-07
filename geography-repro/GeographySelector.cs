@@ -10,7 +10,7 @@ namespace geography_repro
             using (var connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                using (var command = new SqlCommand("SELECT geo from geo_table", connection))
+                using (var command = new SqlCommand("SELECT GeogCol1 from SpatialTable", connection))
                 {
                     return command.ExecuteScalar().ToString();
                 }
